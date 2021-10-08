@@ -5,10 +5,15 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 import productsReducer, { productsFetch } from "./features/productsSlice";
+import { productsAPI } from "./features/productsAPI";
 
 const store = configureStore({
   reducer: {
     products: productsReducer,
+    [productsAPI.reducerPath]: productsAPI.reducer,
+  },
+  middleware: (getDefaultMiddleWare) => {
+    return getDefaultMiddleWare().concat(productsAPI.middleware);
   },
 });
 
