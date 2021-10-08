@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav class="nav-bar">
+    <nav className="nav-bar">
       <Link to="/">
         <h2>Online Shop</h2>
       </Link>
       <Link to="/cart">
-        <div class="nav-bag">
+        <div className="nav-bag">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"

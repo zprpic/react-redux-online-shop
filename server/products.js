@@ -5,7 +5,7 @@ const products = [
     description: "6.1-inch display",
     price: 999,
     image:
-      "https://res.cloudinary.com/zprpic/image/upload/v1633685831/iphone12_x4je9y.jpg",
+      "https://res.cloudinary.com/zprpic/image/upload/v1633685831/iphone12pro_fixlis.jpg",
   },
   {
     id: 2,
