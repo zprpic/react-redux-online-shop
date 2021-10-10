@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { addToCart } from "../features/cartSlice";
+import { addToCart, getTotal } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsAPI";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
-
-  const cart = useSelector((state) => state.cart);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -31,7 +29,12 @@ const Home = () => {
                     <span>{product.description}</span>
                     <span className="price">${product.price}</span>
                   </div>
-                  <button onClick={() => handleAddToCart(product)}>
+                  <button
+                    onClick={() => {
+                      handleAddToCart(product);
+                      dispatch(getTotal());
+                    }}
+                  >
                     Add to cart
                   </button>
                 </div>
