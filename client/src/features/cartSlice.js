@@ -42,6 +42,11 @@ const cartSlice = createSlice({
       );
 
       state.cartItems = nextCartItems;
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+
+      toast.success(`${action.payload.name} removed from cart`, {
+        position: "bottom-left",
+      });
     },
   },
 });
